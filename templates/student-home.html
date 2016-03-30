@@ -1,0 +1,17 @@
+<section class="u-full-width">
+    <div class="row">
+         <div class="six columns">
+            <h2>Enrolled Students</h2>      
+         </div>    
+    </div>
+    
+    <div class="row" *ngFor="#student of students" (click)="chooseStudent(student)">
+         <div class="four columns">
+            <h4>{{student.name}}</h4>      
+         </div>
+         <div class="four columns">
+            <h4>{{student.track}}</h4>      
+         </div>        
+    </div>
+
+</section>

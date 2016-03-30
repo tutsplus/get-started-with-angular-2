@@ -1,0 +1,27 @@
+<section class="u-full-width" *ngIf="student">
+    <div class="row">
+         <div class="six columns">
+            <h2>{{student.name}}</h2>      
+         </div>
+         <div class="two columns">
+            <a class="button button-primary" [routerLink]="['StudentHome']">Back To Students</a>      
+         </div>        
+    </div>
+    
+    <div class="row">
+         <div class="four columns">
+            <h4>{{student.name}}</h4>      
+         </div>
+         <div class="two columns">
+            <h4>{{student.id}}</h4>      
+         </div>        
+    </div>
+    
+    <div class="row">
+         <div class="four columns">
+            <h4>{{student.track}}</h4>      
+         </div>
+    </div>
+
+
+</section>

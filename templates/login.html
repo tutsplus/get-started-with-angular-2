@@ -1,0 +1,37 @@
+<section class="container" [hidden]="loggedIn">
+    <h2>Please Login</h2>
+    <form (ngSubmit)="logOn()"#loginForm="ngForm">
+        
+        <div class="row">
+            <div *ngIf="invalid" class="twelve columns warning">
+                <em>Invalid username/password combination. Try again!</em>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="six columns">
+                <label for="Username">Username</label>
+                <input type="text" class="u-full-width" required [(ngModel)]="userName" ngControl="userName" #uname="ngForm">
+                <div [hidden]="uname.valid || uname.pristine" class="warning">
+                    Name is required
+                </div>
+             </div>
+        </div> 
+        
+        <div class="row">
+            <div class="six columns">
+                <label for="Password">Password</label>
+                <input type="password" class="u-full-width" required [(ngModel)]="password" ngControl="password" #pass="ngForm">
+                <div [hidden]="pass.valid || pass.pristine" class="warning">
+                    Password is required
+                </div>
+            </div>
+        </div> 
+        <input class="button-primary" type="submit" value="LogIn" [disabled]="!loginForm.form.valid"> 
+
+    </form>
+</section>
+<section class="container" [hidden]="!loggedIn">
+    <input class="button-primary" type="button" value="LogOut" (click)="logOut()"> 
+    <h4>{{userName}} logged in</h4>
+</section>
